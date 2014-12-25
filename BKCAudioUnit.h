@@ -21,16 +21,13 @@
  * IN THE SOFTWARE.
  */
 
-#define ISIOS __IPHONE_OS_VERSION_MIN_REQUIRED >= 60000
+#import <AudioUnit/AudioUnit.h>
+#import <Foundation/Foundation.h>
 
-#if ISIOS
+#if __IPHONE_OS_VERSION_MIN_REQUIRED
 #	import <AudioToolbox/AudioToolbox.h>
 #	import <AVFoundation/AVFoundation.h>
-#else
-#	import <AudioUnit/AudioUnit.h>
 #endif
-
-#import <Foundation/Foundation.h>
 
 @class BKCAudioUnit;
 
@@ -59,6 +56,9 @@ typedef void (^ BKCAudioUnitRenderBlock) (BKCAudioUnit * unit, SInt16 * outBuffe
 	AudioStreamBasicDescription streamDescription;
 	AudioComponentInstance      audioComponent;
 	IMP                         delegateMethod;
+#if __IPHONE_OS_VERSION_MIN_REQUIRED
+	id                          interruptObserver;
+#endif
 }
 
 /**
