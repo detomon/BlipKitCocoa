@@ -23,14 +23,15 @@
 
 #import "BKCAudioUnit.h"
 
-#if ISIOS
-#	import <AudioToolbox/AudioToolbox.h>
-#	import <AVFoundation/AVFoundation.h>
-#endif
-
 #define DEFAULT_NUM_CHANNELS 2
 #define DEFAULT_SAMPLE_RATE 44100
 #define DEFAULT_NUM_BITS 16
+
+#ifdef __IPHONE_OS_VERSION_MIN_REQUIRED
+#	define AUDIO_COMPONENT_SUB_TYPE kAudioUnitSubType_RemoteIO
+#else
+#	define AUDIO_COMPONENT_SUB_TYPE kAudioUnitSubType_DefaultOutput
+#endif
 
 typedef OSStatus (* BKCDelegateMethodFunc) (id, SEL, id, SInt16 *, UInt32);
 
@@ -101,11 +102,11 @@ static OSStatus renderCallback (BKCAudioUnit * self, AudioUnitRenderActionFlags 
 	AudioBuffer         * buffer;
 	UInt32                numberFrames;
 	BKCDelegateMethodFunc callback;
-	
+
 	for (NSInteger i = 0; i < ioData -> mNumberBuffers; i ++) {
 		buffer       = & ioData -> mBuffers [i];
 		numberFrames = buffer -> mDataByteSize / buffer -> mNumberChannels / sizeof (SInt16);
-	    outFrames    = (SInt16 *) buffer -> mData;
+		outFrames    = (SInt16 *) buffer -> mData;
 
 		[self lock];
 		{
@@ -129,12 +130,6 @@ static OSStatus renderCallback (BKCAudioUnit * self, AudioUnitRenderActionFlags 
 	return [self initWithNumberOfChannels:DEFAULT_NUM_CHANNELS sampleRate:DEFAULT_SAMPLE_RATE];
 }
 
-- (void)handleInterruption:(NSNotification *)notification
-{
-	NSLog(@"*** Interrupt: %@", notification);
-	[self stop];
-}
-
 - (instancetype)initWithNumberOfChannels:(UInt32)theNumberOfChannels sampleRate:(UInt32)theSampleRate
 {
 	OSErr err;
@@ -150,9 +145,8 @@ static OSStatus renderCallback (BKCAudioUnit * self, AudioUnitRenderActionFlags 
 		memset (& defaultOutputDescription, 0, sizeof (defaultOutputDescription));
 
 		defaultOutputDescription.componentType         = kAudioUnitType_Output;
-		defaultOutputDescription.componentSubType      = kAudioUnitSubType_RemoteIO;
+		defaultOutputDescription.componentSubType      = AUDIO_COMPONENT_SUB_TYPE;
 		defaultOutputDescription.componentManufacturer = kAudioUnitManufacturer_Apple;
-
 		defaultOutput = AudioComponentFindNext (NULL, & defaultOutputDescription);
 
 		if (defaultOutput == NULL) {
@@ -172,23 +166,32 @@ static OSStatus renderCallback (BKCAudioUnit * self, AudioUnitRenderActionFlags 
 				return nil;
 			}
 		}
-
-		[[NSNotificationCenter defaultCenter] addObserver: self
-												 selector: @selector(handleInterruption:)
-													 name: AVAudioSessionInterruptionNotification
-												   object: [AVAudioSession sharedInstance]];
 	}
+
+#ifdef __IPHONE_OS_VERSION_MIN_REQUIRED
+	__weak BKCAudioUnit * _self = self;
+
+	interruptObserver = [[NSNotificationCenter defaultCenter] addObserverForName:AVAudioSessionInterruptionNotification
+																		  object:[AVAudioSession sharedInstance]
+																		   queue:[NSOperationQueue mainQueue]
+																	  usingBlock:^(NSNotification *note) {
+																		  [_self stop];
+																	  }];
+#endif
 
 	return self;
 }
 
 - (void)dealloc
 {
-    [self stop];
+	[self stop];
 	AudioComponentInstanceDispose (audioComponent);
-	[[NSNotificationCenter defaultCenter] removeObserver:self];
+
+#ifdef __IPHONE_OS_VERSION_MIN_REQUIRED
+	[[NSNotificationCenter defaultCenter] removeObserver:interruptObserver];
+#endif
 }
-	
+
 - (UInt32)sampleRate
 {
 	return sampleRate;
@@ -236,32 +239,30 @@ static OSStatus renderCallback (BKCAudioUnit * self, AudioUnitRenderActionFlags 
 	[self unlock];
 }
 
-void interruptionListener (void * inClientData, UInt32 inInterruptionState)
-{
-	BKCAudioUnit * unit = (__bridge BKCAudioUnit *)(inClientData);
-
-	NSLog(@"stop");
-	[unit stop];
-}
-
 - (BOOL)start
 {
 	OSErr err;
 	AURenderCallbackStruct input;
 
-	NSError * error = nil;
-	AVAudioSession * audioSession = [AVAudioSession sharedInstance];
-	[audioSession setCategory:AVAudioSessionCategorySoloAmbient error:& error];
-	NSLog(@"Error: %@", error);
-
-	BOOL activated = [audioSession setActive:YES error:&error];
-	NSLog(@"Error: %@ %d", error, activated);
-
-	
 	if (delegate == nil && renderBlock == NULL) {
 		NSLog (@"*** No delegate set");
 		return NO;
 	}
+
+#ifdef __IPHONE_OS_VERSION_MIN_REQUIRED
+	NSError * error = nil;
+	AVAudioSession * audioSession = [AVAudioSession sharedInstance];
+
+	if ([audioSession setCategory:AVAudioSessionCategorySoloAmbient error:& error] == NO) {
+		NSLog(@"Error setting audio category: %@", error);
+		return NO;
+	}
+
+	if ([audioSession setActive:YES error:& error] == NO) {
+		NSLog(@"AudioSession error: %@", error);
+		return NO;
+	}
+#endif
 
 	memset (& input, 0, sizeof (input));
 
