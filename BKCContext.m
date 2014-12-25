@@ -83,12 +83,12 @@
 
 - (BOOL)start
 {
-	return [audioUnit start];
+	return [self.audioUnit start];
 }
 
 - (BOOL)stop
 {
-	return [audioUnit stop];
+	return [self.audioUnit stop];
 }
 
 - (void)reset
