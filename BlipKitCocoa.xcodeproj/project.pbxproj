@@ -427,8 +427,8 @@
 			buildSettings = {
 				EXECUTABLE_PREFIX = lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "macosx ios";
-				VALID_ARCHS = "i386 x86_64 armv7 armv_64";
+				SUPPORTED_PLATFORMS = "macosx ios iphonesimulator iphoneos";
+				VALID_ARCHS = "i386 x86_64 arm64 armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -437,8 +437,8 @@
 			buildSettings = {
 				EXECUTABLE_PREFIX = lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "macosx ios";
-				VALID_ARCHS = "i386 x86_64 armv7 armv_64";
+				SUPPORTED_PLATFORMS = "macosx ios iphonesimulator iphoneos";
+				VALID_ARCHS = "i386 x86_64 arm64 armv7 armv7s";
 			};
 			name = Release;
 		};
