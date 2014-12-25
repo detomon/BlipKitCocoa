@@ -1,0 +1,469 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F4B881FD1A4C272400B94C72 /* BKCAudioUnit.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B881EB1A4C272400B94C72 /* BKCAudioUnit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F4B881FE1A4C272400B94C72 /* BKCBase.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B881EC1A4C272400B94C72 /* BKCBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F4B881FF1A4C272400B94C72 /* BKCContext.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B881ED1A4C272400B94C72 /* BKCContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F4B882001A4C272400B94C72 /* BKCDivider.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B881EE1A4C272400B94C72 /* BKCDivider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F4B882011A4C272400B94C72 /* BKCInstrument.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B881EF1A4C272400B94C72 /* BKCInstrument.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F4B882021A4C272400B94C72 /* BKCSample.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B881F01A4C272400B94C72 /* BKCSample.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F4B882031A4C272400B94C72 /* BKCSequence.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B881F11A4C272400B94C72 /* BKCSequence.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F4B882041A4C272400B94C72 /* BKCTrack.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B881F21A4C272400B94C72 /* BKCTrack.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F4B882051A4C272400B94C72 /* BKCWaveform.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B881F31A4C272400B94C72 /* BKCWaveform.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F4B882061A4C272400B94C72 /* BlipKitCocoa.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B881F41A4C272400B94C72 /* BlipKitCocoa.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F4B882071A4C272400B94C72 /* BKCAudioUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B881F51A4C272400B94C72 /* BKCAudioUnit.m */; };
+		F4B882081A4C272400B94C72 /* BKCContext.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B881F61A4C272400B94C72 /* BKCContext.m */; };
+		F4B882091A4C272400B94C72 /* BKCDivider.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B881F71A4C272400B94C72 /* BKCDivider.m */; };
+		F4B8820A1A4C272400B94C72 /* BKCInstrument.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B881F81A4C272400B94C72 /* BKCInstrument.m */; };
+		F4B8820B1A4C272400B94C72 /* BKCSample.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B881F91A4C272400B94C72 /* BKCSample.m */; };
+		F4B8820C1A4C272400B94C72 /* BKCSequence.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B881FA1A4C272400B94C72 /* BKCSequence.m */; };
+		F4B8820D1A4C272400B94C72 /* BKCTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B881FB1A4C272400B94C72 /* BKCTrack.m */; };
+		F4B8820E1A4C272400B94C72 /* BKCWaveform.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B881FC1A4C272400B94C72 /* BKCWaveform.m */; };
+		F4B882361A4C27C300B94C72 /* BKBase.c in Sources */ = {isa = PBXBuildFile; fileRef = F4B882101A4C27C300B94C72 /* BKBase.c */; };
+		F4B882371A4C27C300B94C72 /* BKBase.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B882111A4C27C300B94C72 /* BKBase.h */; };
+		F4B882381A4C27C300B94C72 /* BKBuffer.c in Sources */ = {isa = PBXBuildFile; fileRef = F4B882121A4C27C300B94C72 /* BKBuffer.c */; };
+		F4B882391A4C27C300B94C72 /* BKBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B882131A4C27C300B94C72 /* BKBuffer.h */; };
+		F4B8823A1A4C27C300B94C72 /* BKClock.c in Sources */ = {isa = PBXBuildFile; fileRef = F4B882141A4C27C300B94C72 /* BKClock.c */; };
+		F4B8823B1A4C27C300B94C72 /* BKClock.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B882151A4C27C300B94C72 /* BKClock.h */; };
+		F4B8823C1A4C27C300B94C72 /* BKComplex.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B882161A4C27C300B94C72 /* BKComplex.h */; };
+		F4B8823D1A4C27C300B94C72 /* BKContext.c in Sources */ = {isa = PBXBuildFile; fileRef = F4B882171A4C27C300B94C72 /* BKContext.c */; };
+		F4B8823E1A4C27C300B94C72 /* BKContext.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B882181A4C27C300B94C72 /* BKContext.h */; };
+		F4B8823F1A4C27C300B94C72 /* BKData.c in Sources */ = {isa = PBXBuildFile; fileRef = F4B882191A4C27C300B94C72 /* BKData.c */; };
+		F4B882401A4C27C300B94C72 /* BKData.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B8821A1A4C27C300B94C72 /* BKData.h */; };
+		F4B882411A4C27C300B94C72 /* BKData_internal.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B8821B1A4C27C300B94C72 /* BKData_internal.h */; };
+		F4B882421A4C27C300B94C72 /* BKFFT.c in Sources */ = {isa = PBXBuildFile; fileRef = F4B8821C1A4C27C300B94C72 /* BKFFT.c */; };
+		F4B882431A4C27C300B94C72 /* BKFFT.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B8821D1A4C27C300B94C72 /* BKFFT.h */; };
+		F4B882441A4C27C300B94C72 /* BKInstrument.c in Sources */ = {isa = PBXBuildFile; fileRef = F4B8821E1A4C27C300B94C72 /* BKInstrument.c */; };
+		F4B882451A4C27C300B94C72 /* BKInstrument.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B8821F1A4C27C300B94C72 /* BKInstrument.h */; };
+		F4B882461A4C27C300B94C72 /* BKInstrument_internal.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B882201A4C27C300B94C72 /* BKInstrument_internal.h */; };
+		F4B882471A4C27C300B94C72 /* BKInterpolation.c in Sources */ = {isa = PBXBuildFile; fileRef = F4B882211A4C27C300B94C72 /* BKInterpolation.c */; };
+		F4B882481A4C27C300B94C72 /* BKInterpolation.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B882221A4C27C300B94C72 /* BKInterpolation.h */; };
+		F4B882491A4C27C300B94C72 /* BKObject.c in Sources */ = {isa = PBXBuildFile; fileRef = F4B882231A4C27C300B94C72 /* BKObject.c */; };
+		F4B8824A1A4C27C300B94C72 /* BKObject.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B882241A4C27C300B94C72 /* BKObject.h */; };
+		F4B8824B1A4C27C300B94C72 /* BKSequence.c in Sources */ = {isa = PBXBuildFile; fileRef = F4B882251A4C27C300B94C72 /* BKSequence.c */; };
+		F4B8824C1A4C27C300B94C72 /* BKSequence.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B882261A4C27C300B94C72 /* BKSequence.h */; };
+		F4B8824D1A4C27C300B94C72 /* BKTime.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B882271A4C27C300B94C72 /* BKTime.h */; };
+		F4B8824E1A4C27C300B94C72 /* BKTone.c in Sources */ = {isa = PBXBuildFile; fileRef = F4B882281A4C27C300B94C72 /* BKTone.c */; };
+		F4B8824F1A4C27C300B94C72 /* BKTone.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B882291A4C27C300B94C72 /* BKTone.h */; };
+		F4B882501A4C27C300B94C72 /* BKTrack.c in Sources */ = {isa = PBXBuildFile; fileRef = F4B8822A1A4C27C300B94C72 /* BKTrack.c */; };
+		F4B882511A4C27C300B94C72 /* BKTrack.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B8822B1A4C27C300B94C72 /* BKTrack.h */; };
+		F4B882521A4C27C300B94C72 /* BKUnit.c in Sources */ = {isa = PBXBuildFile; fileRef = F4B8822C1A4C27C300B94C72 /* BKUnit.c */; };
+		F4B882531A4C27C300B94C72 /* BKUnit.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B8822D1A4C27C300B94C72 /* BKUnit.h */; };
+		F4B882541A4C27C300B94C72 /* BKUnit_internal.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B8822E1A4C27C300B94C72 /* BKUnit_internal.h */; };
+		F4B882551A4C27C300B94C72 /* BKWaveFile_internal.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B8822F1A4C27C300B94C72 /* BKWaveFile_internal.h */; };
+		F4B882561A4C27C300B94C72 /* BKWaveFileReader.c in Sources */ = {isa = PBXBuildFile; fileRef = F4B882301A4C27C300B94C72 /* BKWaveFileReader.c */; };
+		F4B882571A4C27C300B94C72 /* BKWaveFileReader.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B882311A4C27C300B94C72 /* BKWaveFileReader.h */; };
+		F4B882581A4C27C300B94C72 /* BKWaveFileWriter.c in Sources */ = {isa = PBXBuildFile; fileRef = F4B882321A4C27C300B94C72 /* BKWaveFileWriter.c */; };
+		F4B882591A4C27C300B94C72 /* BKWaveFileWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B882331A4C27C300B94C72 /* BKWaveFileWriter.h */; };
+		F4B8825A1A4C27C300B94C72 /* BlipKit.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B882341A4C27C300B94C72 /* BlipKit.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F4B881D01A4C26DC00B94C72 /* libBlipKitCocoa.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBlipKitCocoa.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4B881EB1A4C272400B94C72 /* BKCAudioUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKCAudioUnit.h; sourceTree = "<group>"; };
+		F4B881EC1A4C272400B94C72 /* BKCBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKCBase.h; sourceTree = "<group>"; };
+		F4B881ED1A4C272400B94C72 /* BKCContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKCContext.h; sourceTree = "<group>"; };
+		F4B881EE1A4C272400B94C72 /* BKCDivider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKCDivider.h; sourceTree = "<group>"; };
+		F4B881EF1A4C272400B94C72 /* BKCInstrument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKCInstrument.h; sourceTree = "<group>"; };
+		F4B881F01A4C272400B94C72 /* BKCSample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKCSample.h; sourceTree = "<group>"; };
+		F4B881F11A4C272400B94C72 /* BKCSequence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKCSequence.h; sourceTree = "<group>"; };
+		F4B881F21A4C272400B94C72 /* BKCTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKCTrack.h; sourceTree = "<group>"; };
+		F4B881F31A4C272400B94C72 /* BKCWaveform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKCWaveform.h; sourceTree = "<group>"; };
+		F4B881F41A4C272400B94C72 /* BlipKitCocoa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlipKitCocoa.h; sourceTree = "<group>"; };
+		F4B881F51A4C272400B94C72 /* BKCAudioUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKCAudioUnit.m; sourceTree = "<group>"; };
+		F4B881F61A4C272400B94C72 /* BKCContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKCContext.m; sourceTree = "<group>"; };
+		F4B881F71A4C272400B94C72 /* BKCDivider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKCDivider.m; sourceTree = "<group>"; };
+		F4B881F81A4C272400B94C72 /* BKCInstrument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKCInstrument.m; sourceTree = "<group>"; };
+		F4B881F91A4C272400B94C72 /* BKCSample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKCSample.m; sourceTree = "<group>"; };
+		F4B881FA1A4C272400B94C72 /* BKCSequence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKCSequence.m; sourceTree = "<group>"; };
+		F4B881FB1A4C272400B94C72 /* BKCTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKCTrack.m; sourceTree = "<group>"; };
+		F4B881FC1A4C272400B94C72 /* BKCWaveform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKCWaveform.m; sourceTree = "<group>"; };
+		F4B882101A4C27C300B94C72 /* BKBase.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BKBase.c; sourceTree = "<group>"; };
+		F4B882111A4C27C300B94C72 /* BKBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKBase.h; sourceTree = "<group>"; };
+		F4B882121A4C27C300B94C72 /* BKBuffer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BKBuffer.c; sourceTree = "<group>"; };
+		F4B882131A4C27C300B94C72 /* BKBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKBuffer.h; sourceTree = "<group>"; };
+		F4B882141A4C27C300B94C72 /* BKClock.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BKClock.c; sourceTree = "<group>"; };
+		F4B882151A4C27C300B94C72 /* BKClock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKClock.h; sourceTree = "<group>"; };
+		F4B882161A4C27C300B94C72 /* BKComplex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKComplex.h; sourceTree = "<group>"; };
+		F4B882171A4C27C300B94C72 /* BKContext.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BKContext.c; sourceTree = "<group>"; };
+		F4B882181A4C27C300B94C72 /* BKContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKContext.h; sourceTree = "<group>"; };
+		F4B882191A4C27C300B94C72 /* BKData.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BKData.c; sourceTree = "<group>"; };
+		F4B8821A1A4C27C300B94C72 /* BKData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKData.h; sourceTree = "<group>"; };
+		F4B8821B1A4C27C300B94C72 /* BKData_internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKData_internal.h; sourceTree = "<group>"; };
+		F4B8821C1A4C27C300B94C72 /* BKFFT.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BKFFT.c; sourceTree = "<group>"; };
+		F4B8821D1A4C27C300B94C72 /* BKFFT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKFFT.h; sourceTree = "<group>"; };
+		F4B8821E1A4C27C300B94C72 /* BKInstrument.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BKInstrument.c; sourceTree = "<group>"; };
+		F4B8821F1A4C27C300B94C72 /* BKInstrument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKInstrument.h; sourceTree = "<group>"; };
+		F4B882201A4C27C300B94C72 /* BKInstrument_internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKInstrument_internal.h; sourceTree = "<group>"; };
+		F4B882211A4C27C300B94C72 /* BKInterpolation.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BKInterpolation.c; sourceTree = "<group>"; };
+		F4B882221A4C27C300B94C72 /* BKInterpolation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKInterpolation.h; sourceTree = "<group>"; };
+		F4B882231A4C27C300B94C72 /* BKObject.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BKObject.c; sourceTree = "<group>"; };
+		F4B882241A4C27C300B94C72 /* BKObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKObject.h; sourceTree = "<group>"; };
+		F4B882251A4C27C300B94C72 /* BKSequence.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BKSequence.c; sourceTree = "<group>"; };
+		F4B882261A4C27C300B94C72 /* BKSequence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKSequence.h; sourceTree = "<group>"; };
+		F4B882271A4C27C300B94C72 /* BKTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKTime.h; sourceTree = "<group>"; };
+		F4B882281A4C27C300B94C72 /* BKTone.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BKTone.c; sourceTree = "<group>"; };
+		F4B882291A4C27C300B94C72 /* BKTone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKTone.h; sourceTree = "<group>"; };
+		F4B8822A1A4C27C300B94C72 /* BKTrack.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BKTrack.c; sourceTree = "<group>"; };
+		F4B8822B1A4C27C300B94C72 /* BKTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKTrack.h; sourceTree = "<group>"; };
+		F4B8822C1A4C27C300B94C72 /* BKUnit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BKUnit.c; sourceTree = "<group>"; };
+		F4B8822D1A4C27C300B94C72 /* BKUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKUnit.h; sourceTree = "<group>"; };
+		F4B8822E1A4C27C300B94C72 /* BKUnit_internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKUnit_internal.h; sourceTree = "<group>"; };
+		F4B8822F1A4C27C300B94C72 /* BKWaveFile_internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKWaveFile_internal.h; sourceTree = "<group>"; };
+		F4B882301A4C27C300B94C72 /* BKWaveFileReader.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BKWaveFileReader.c; sourceTree = "<group>"; };
+		F4B882311A4C27C300B94C72 /* BKWaveFileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKWaveFileReader.h; sourceTree = "<group>"; };
+		F4B882321A4C27C300B94C72 /* BKWaveFileWriter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BKWaveFileWriter.c; sourceTree = "<group>"; };
+		F4B882331A4C27C300B94C72 /* BKWaveFileWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKWaveFileWriter.h; sourceTree = "<group>"; };
+		F4B882341A4C27C300B94C72 /* BlipKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlipKit.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F4B881CD1A4C26DC00B94C72 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F4B881C71A4C26DC00B94C72 = {
+			isa = PBXGroup;
+			children = (
+				F4B881EA1A4C271100B94C72 /* BlipKitCocoa */,
+				F4B881D11A4C26DC00B94C72 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F4B881D11A4C26DC00B94C72 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F4B881D01A4C26DC00B94C72 /* libBlipKitCocoa.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F4B881EA1A4C271100B94C72 /* BlipKitCocoa */ = {
+			isa = PBXGroup;
+			children = (
+				F4B881F41A4C272400B94C72 /* BlipKitCocoa.h */,
+				F4B881EB1A4C272400B94C72 /* BKCAudioUnit.h */,
+				F4B881F51A4C272400B94C72 /* BKCAudioUnit.m */,
+				F4B881EC1A4C272400B94C72 /* BKCBase.h */,
+				F4B881ED1A4C272400B94C72 /* BKCContext.h */,
+				F4B881F61A4C272400B94C72 /* BKCContext.m */,
+				F4B881EE1A4C272400B94C72 /* BKCDivider.h */,
+				F4B881F71A4C272400B94C72 /* BKCDivider.m */,
+				F4B881EF1A4C272400B94C72 /* BKCInstrument.h */,
+				F4B881F81A4C272400B94C72 /* BKCInstrument.m */,
+				F4B881F01A4C272400B94C72 /* BKCSample.h */,
+				F4B881F91A4C272400B94C72 /* BKCSample.m */,
+				F4B881F11A4C272400B94C72 /* BKCSequence.h */,
+				F4B881FA1A4C272400B94C72 /* BKCSequence.m */,
+				F4B881F21A4C272400B94C72 /* BKCTrack.h */,
+				F4B881FB1A4C272400B94C72 /* BKCTrack.m */,
+				F4B881F31A4C272400B94C72 /* BKCWaveform.h */,
+				F4B881FC1A4C272400B94C72 /* BKCWaveform.m */,
+				F4B8820F1A4C27C300B94C72 /* BlipKit */,
+			);
+			name = BlipKitCocoa;
+			sourceTree = "<group>";
+		};
+		F4B8820F1A4C27C300B94C72 /* BlipKit */ = {
+			isa = PBXGroup;
+			children = (
+				F4B882341A4C27C300B94C72 /* BlipKit.h */,
+				F4B882101A4C27C300B94C72 /* BKBase.c */,
+				F4B882111A4C27C300B94C72 /* BKBase.h */,
+				F4B882121A4C27C300B94C72 /* BKBuffer.c */,
+				F4B882131A4C27C300B94C72 /* BKBuffer.h */,
+				F4B882141A4C27C300B94C72 /* BKClock.c */,
+				F4B882151A4C27C300B94C72 /* BKClock.h */,
+				F4B882161A4C27C300B94C72 /* BKComplex.h */,
+				F4B882171A4C27C300B94C72 /* BKContext.c */,
+				F4B882181A4C27C300B94C72 /* BKContext.h */,
+				F4B882191A4C27C300B94C72 /* BKData.c */,
+				F4B8821A1A4C27C300B94C72 /* BKData.h */,
+				F4B8821B1A4C27C300B94C72 /* BKData_internal.h */,
+				F4B8821C1A4C27C300B94C72 /* BKFFT.c */,
+				F4B8821D1A4C27C300B94C72 /* BKFFT.h */,
+				F4B8821E1A4C27C300B94C72 /* BKInstrument.c */,
+				F4B8821F1A4C27C300B94C72 /* BKInstrument.h */,
+				F4B882201A4C27C300B94C72 /* BKInstrument_internal.h */,
+				F4B882211A4C27C300B94C72 /* BKInterpolation.c */,
+				F4B882221A4C27C300B94C72 /* BKInterpolation.h */,
+				F4B882231A4C27C300B94C72 /* BKObject.c */,
+				F4B882241A4C27C300B94C72 /* BKObject.h */,
+				F4B882251A4C27C300B94C72 /* BKSequence.c */,
+				F4B882261A4C27C300B94C72 /* BKSequence.h */,
+				F4B882271A4C27C300B94C72 /* BKTime.h */,
+				F4B882281A4C27C300B94C72 /* BKTone.c */,
+				F4B882291A4C27C300B94C72 /* BKTone.h */,
+				F4B8822A1A4C27C300B94C72 /* BKTrack.c */,
+				F4B8822B1A4C27C300B94C72 /* BKTrack.h */,
+				F4B8822C1A4C27C300B94C72 /* BKUnit.c */,
+				F4B8822D1A4C27C300B94C72 /* BKUnit.h */,
+				F4B8822E1A4C27C300B94C72 /* BKUnit_internal.h */,
+				F4B8822F1A4C27C300B94C72 /* BKWaveFile_internal.h */,
+				F4B882301A4C27C300B94C72 /* BKWaveFileReader.c */,
+				F4B882311A4C27C300B94C72 /* BKWaveFileReader.h */,
+				F4B882321A4C27C300B94C72 /* BKWaveFileWriter.c */,
+				F4B882331A4C27C300B94C72 /* BKWaveFileWriter.h */,
+			);
+			name = BlipKit;
+			path = bliplay/BlipKit/src;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		F4B881CE1A4C26DC00B94C72 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4B8823B1A4C27C300B94C72 /* BKClock.h in Headers */,
+				F4B882411A4C27C300B94C72 /* BKData_internal.h in Headers */,
+				F4B882011A4C272400B94C72 /* BKCInstrument.h in Headers */,
+				F4B882021A4C272400B94C72 /* BKCSample.h in Headers */,
+				F4B881FF1A4C272400B94C72 /* BKCContext.h in Headers */,
+				F4B882571A4C27C300B94C72 /* BKWaveFileReader.h in Headers */,
+				F4B882001A4C272400B94C72 /* BKCDivider.h in Headers */,
+				F4B882401A4C27C300B94C72 /* BKData.h in Headers */,
+				F4B881FE1A4C272400B94C72 /* BKCBase.h in Headers */,
+				F4B8824A1A4C27C300B94C72 /* BKObject.h in Headers */,
+				F4B8823E1A4C27C300B94C72 /* BKContext.h in Headers */,
+				F4B8824C1A4C27C300B94C72 /* BKSequence.h in Headers */,
+				F4B882481A4C27C300B94C72 /* BKInterpolation.h in Headers */,
+				F4B8823C1A4C27C300B94C72 /* BKComplex.h in Headers */,
+				F4B8825A1A4C27C300B94C72 /* BlipKit.h in Headers */,
+				F4B882041A4C272400B94C72 /* BKCTrack.h in Headers */,
+				F4B882531A4C27C300B94C72 /* BKUnit.h in Headers */,
+				F4B8824F1A4C27C300B94C72 /* BKTone.h in Headers */,
+				F4B882451A4C27C300B94C72 /* BKInstrument.h in Headers */,
+				F4B882371A4C27C300B94C72 /* BKBase.h in Headers */,
+				F4B882431A4C27C300B94C72 /* BKFFT.h in Headers */,
+				F4B882391A4C27C300B94C72 /* BKBuffer.h in Headers */,
+				F4B882541A4C27C300B94C72 /* BKUnit_internal.h in Headers */,
+				F4B8824D1A4C27C300B94C72 /* BKTime.h in Headers */,
+				F4B882061A4C272400B94C72 /* BlipKitCocoa.h in Headers */,
+				F4B882551A4C27C300B94C72 /* BKWaveFile_internal.h in Headers */,
+				F4B882051A4C272400B94C72 /* BKCWaveform.h in Headers */,
+				F4B882591A4C27C300B94C72 /* BKWaveFileWriter.h in Headers */,
+				F4B882031A4C272400B94C72 /* BKCSequence.h in Headers */,
+				F4B882511A4C27C300B94C72 /* BKTrack.h in Headers */,
+				F4B881FD1A4C272400B94C72 /* BKCAudioUnit.h in Headers */,
+				F4B882461A4C27C300B94C72 /* BKInstrument_internal.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		F4B881CF1A4C26DC00B94C72 /* BlipKitCocoa */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4B881E41A4C26DC00B94C72 /* Build configuration list for PBXNativeTarget "BlipKitCocoa" */;
+			buildPhases = (
+				F4B881CC1A4C26DC00B94C72 /* Sources */,
+				F4B881CD1A4C26DC00B94C72 /* Frameworks */,
+				F4B881CE1A4C26DC00B94C72 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BlipKitCocoa;
+			productName = BlipKitCocoa;
+			productReference = F4B881D01A4C26DC00B94C72 /* libBlipKitCocoa.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F4B881C81A4C26DC00B94C72 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = monoxid;
+				TargetAttributes = {
+					F4B881CF1A4C26DC00B94C72 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+				};
+			};
+			buildConfigurationList = F4B881CB1A4C26DC00B94C72 /* Build configuration list for PBXProject "BlipKitCocoa" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F4B881C71A4C26DC00B94C72;
+			productRefGroup = F4B881D11A4C26DC00B94C72 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F4B881CF1A4C26DC00B94C72 /* BlipKitCocoa */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F4B881CC1A4C26DC00B94C72 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4B882381A4C27C300B94C72 /* BKBuffer.c in Sources */,
+				F4B882491A4C27C300B94C72 /* BKObject.c in Sources */,
+				F4B882081A4C272400B94C72 /* BKCContext.m in Sources */,
+				F4B8820B1A4C272400B94C72 /* BKCSample.m in Sources */,
+				F4B8820D1A4C272400B94C72 /* BKCTrack.m in Sources */,
+				F4B8824B1A4C27C300B94C72 /* BKSequence.c in Sources */,
+				F4B882071A4C272400B94C72 /* BKCAudioUnit.m in Sources */,
+				F4B882421A4C27C300B94C72 /* BKFFT.c in Sources */,
+				F4B882561A4C27C300B94C72 /* BKWaveFileReader.c in Sources */,
+				F4B882501A4C27C300B94C72 /* BKTrack.c in Sources */,
+				F4B8820C1A4C272400B94C72 /* BKCSequence.m in Sources */,
+				F4B882521A4C27C300B94C72 /* BKUnit.c in Sources */,
+				F4B882471A4C27C300B94C72 /* BKInterpolation.c in Sources */,
+				F4B8823D1A4C27C300B94C72 /* BKContext.c in Sources */,
+				F4B882091A4C272400B94C72 /* BKCDivider.m in Sources */,
+				F4B8820A1A4C272400B94C72 /* BKCInstrument.m in Sources */,
+				F4B8823F1A4C27C300B94C72 /* BKData.c in Sources */,
+				F4B8823A1A4C27C300B94C72 /* BKClock.c in Sources */,
+				F4B8820E1A4C272400B94C72 /* BKCWaveform.m in Sources */,
+				F4B8824E1A4C27C300B94C72 /* BKTone.c in Sources */,
+				F4B882581A4C27C300B94C72 /* BKWaveFileWriter.c in Sources */,
+				F4B882441A4C27C300B94C72 /* BKInstrument.c in Sources */,
+				F4B882361A4C27C300B94C72 /* BKBase.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		F4B881E21A4C26DC00B94C72 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		F4B881E31A4C26DC00B94C72 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		F4B881E51A4C26DC00B94C72 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "macosx ios";
+				VALID_ARCHS = "i386 x86_64 armv7 armv_64";
+			};
+			name = Debug;
+		};
+		F4B881E61A4C26DC00B94C72 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "macosx ios";
+				VALID_ARCHS = "i386 x86_64 armv7 armv_64";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F4B881CB1A4C26DC00B94C72 /* Build configuration list for PBXProject "BlipKitCocoa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4B881E21A4C26DC00B94C72 /* Debug */,
+				F4B881E31A4C26DC00B94C72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F4B881E41A4C26DC00B94C72 /* Build configuration list for PBXNativeTarget "BlipKitCocoa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4B881E51A4C26DC00B94C72 /* Debug */,
+				F4B881E61A4C26DC00B94C72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F4B881C81A4C26DC00B94C72 /* Project object */;
+}
