@@ -85,6 +85,7 @@ typedef NS_ENUM(NSInteger, BKCAttr)
 	BKCAttrTriangle              = BK_TRIANGLE,
 	BKCAttrNoise                 = BK_NOISE,
 	BKCAttrSawtooth              = BK_SAWTOOTH,
+	BKCAttrSine                  = BK_SINE,
 	BKCAttrCustom                = BK_CUSTOM,
 	BKCAttrSample                = BK_SAMPLE,
 	BKCAttrEffectType            = BK_EFFECT_TYPE,
