@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F4B881FD1A4C272400B94C72 /* BKCAudioUnit.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B881EB1A4C272400B94C72 /* BKCAudioUnit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F4B881FE1A4C272400B94C72 /* BKCBase.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B881EC1A4C272400B94C72 /* BKCBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F4B881FF1A4C272400B94C72 /* BKCContext.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B881ED1A4C272400B94C72 /* BKCContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F4B882001A4C272400B94C72 /* BKCDivider.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B881EE1A4C272400B94C72 /* BKCDivider.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F4B882011A4C272400B94C72 /* BKCInstrument.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B881EF1A4C272400B94C72 /* BKCInstrument.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F4B882021A4C272400B94C72 /* BKCSample.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B881F01A4C272400B94C72 /* BKCSample.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F4B882031A4C272400B94C72 /* BKCSequence.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B881F11A4C272400B94C72 /* BKCSequence.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F4B882041A4C272400B94C72 /* BKCTrack.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B881F21A4C272400B94C72 /* BKCTrack.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F4B882051A4C272400B94C72 /* BKCWaveform.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B881F31A4C272400B94C72 /* BKCWaveform.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F4B882061A4C272400B94C72 /* BlipKitCocoa.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B881F41A4C272400B94C72 /* BlipKitCocoa.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F4B881FD1A4C272400B94C72 /* BKCAudioUnit.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B881EB1A4C272400B94C72 /* BKCAudioUnit.h */; };
+		F4B881FE1A4C272400B94C72 /* BKCBase.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B881EC1A4C272400B94C72 /* BKCBase.h */; };
+		F4B881FF1A4C272400B94C72 /* BKCContext.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B881ED1A4C272400B94C72 /* BKCContext.h */; };
+		F4B882001A4C272400B94C72 /* BKCDivider.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B881EE1A4C272400B94C72 /* BKCDivider.h */; };
+		F4B882011A4C272400B94C72 /* BKCInstrument.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B881EF1A4C272400B94C72 /* BKCInstrument.h */; };
+		F4B882021A4C272400B94C72 /* BKCSample.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B881F01A4C272400B94C72 /* BKCSample.h */; };
+		F4B882031A4C272400B94C72 /* BKCSequence.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B881F11A4C272400B94C72 /* BKCSequence.h */; };
+		F4B882041A4C272400B94C72 /* BKCTrack.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B881F21A4C272400B94C72 /* BKCTrack.h */; };
+		F4B882051A4C272400B94C72 /* BKCWaveform.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B881F31A4C272400B94C72 /* BKCWaveform.h */; };
+		F4B882061A4C272400B94C72 /* BlipKitCocoa.h in Headers */ = {isa = PBXBuildFile; fileRef = F4B881F41A4C272400B94C72 /* BlipKitCocoa.h */; };
 		F4B882071A4C272400B94C72 /* BKCAudioUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B881F51A4C272400B94C72 /* BKCAudioUnit.m */; };
 		F4B882081A4C272400B94C72 /* BKCContext.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B881F61A4C272400B94C72 /* BKCContext.m */; };
 		F4B882091A4C272400B94C72 /* BKCDivider.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B881F71A4C272400B94C72 /* BKCDivider.m */; };
@@ -230,20 +230,24 @@
 			files = (
 				F4B8823B1A4C27C300B94C72 /* BKClock.h in Headers */,
 				F4B882411A4C27C300B94C72 /* BKData_internal.h in Headers */,
+				F4B882571A4C27C300B94C72 /* BKWaveFileReader.h in Headers */,
+				F4B882401A4C27C300B94C72 /* BKData.h in Headers */,
+				F4B8824A1A4C27C300B94C72 /* BKObject.h in Headers */,
 				F4B882011A4C272400B94C72 /* BKCInstrument.h in Headers */,
 				F4B882021A4C272400B94C72 /* BKCSample.h in Headers */,
 				F4B881FF1A4C272400B94C72 /* BKCContext.h in Headers */,
-				F4B882571A4C27C300B94C72 /* BKWaveFileReader.h in Headers */,
 				F4B882001A4C272400B94C72 /* BKCDivider.h in Headers */,
-				F4B882401A4C27C300B94C72 /* BKData.h in Headers */,
 				F4B881FE1A4C272400B94C72 /* BKCBase.h in Headers */,
-				F4B8824A1A4C27C300B94C72 /* BKObject.h in Headers */,
+				F4B882041A4C272400B94C72 /* BKCTrack.h in Headers */,
+				F4B882061A4C272400B94C72 /* BlipKitCocoa.h in Headers */,
+				F4B882051A4C272400B94C72 /* BKCWaveform.h in Headers */,
+				F4B882031A4C272400B94C72 /* BKCSequence.h in Headers */,
+				F4B881FD1A4C272400B94C72 /* BKCAudioUnit.h in Headers */,
 				F4B8823E1A4C27C300B94C72 /* BKContext.h in Headers */,
 				F4B8824C1A4C27C300B94C72 /* BKSequence.h in Headers */,
 				F4B882481A4C27C300B94C72 /* BKInterpolation.h in Headers */,
 				F4B8823C1A4C27C300B94C72 /* BKComplex.h in Headers */,
 				F4B8825A1A4C27C300B94C72 /* BlipKit.h in Headers */,
-				F4B882041A4C272400B94C72 /* BKCTrack.h in Headers */,
 				F4B882531A4C27C300B94C72 /* BKUnit.h in Headers */,
 				F4B8824F1A4C27C300B94C72 /* BKTone.h in Headers */,
 				F4B882451A4C27C300B94C72 /* BKInstrument.h in Headers */,
@@ -252,13 +256,9 @@
 				F4B882391A4C27C300B94C72 /* BKBuffer.h in Headers */,
 				F4B882541A4C27C300B94C72 /* BKUnit_internal.h in Headers */,
 				F4B8824D1A4C27C300B94C72 /* BKTime.h in Headers */,
-				F4B882061A4C272400B94C72 /* BlipKitCocoa.h in Headers */,
 				F4B882551A4C27C300B94C72 /* BKWaveFile_internal.h in Headers */,
-				F4B882051A4C272400B94C72 /* BKCWaveform.h in Headers */,
 				F4B882591A4C27C300B94C72 /* BKWaveFileWriter.h in Headers */,
-				F4B882031A4C272400B94C72 /* BKCSequence.h in Headers */,
 				F4B882511A4C27C300B94C72 /* BKTrack.h in Headers */,
-				F4B881FD1A4C272400B94C72 /* BKCAudioUnit.h in Headers */,
 				F4B882461A4C27C300B94C72 /* BKInstrument_internal.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,6 +385,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
@@ -419,6 +420,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};

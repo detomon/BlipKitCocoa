@@ -20,20 +20,6 @@
                ReferencedContainer = "container:BlipKitCocoa.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F4B881DA1A4C26DC00B94C72"
-               BuildableName = "BlipKitCocoaTests.xctest"
-               BlueprintName = "BlipKitCocoaTests"
-               ReferencedContainer = "container:BlipKitCocoa.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
