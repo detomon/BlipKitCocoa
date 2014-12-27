@@ -55,11 +55,6 @@ typedef enum: NSUInteger
 @property (assign, nonatomic) BOOL enabled;
 
 /**
- * Length of sequence
- */
-@property (assign, nonatomic) NSUInteger length;
-
-/**
  * Sustain repeat range
  */
 @property (assign, nonatomic) NSRange sustainRange;
