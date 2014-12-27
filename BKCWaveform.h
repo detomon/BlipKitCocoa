@@ -23,6 +23,7 @@
 
 #import <Foundation/Foundation.h>
 #import "BKCSequence.h"
+#import "BKCBase.h"
 
 @class BKCTrack;
 
@@ -34,7 +35,7 @@
 /**
  * Waveform type
  */
-@property (readonly, nonatomic) BKEnum type;
+@property (readonly, nonatomic) BKCAttr type;
 
 /**
  * Underlaying data object
