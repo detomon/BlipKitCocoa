@@ -173,7 +173,12 @@
 
 - (void)audioOutputUnitRender:(BKCAudioUnit *)unit outFrames:(SInt16 *)outBuffer numberFrames:(UInt32)inNumberFrames
 {
-	[self generateFrames:outBuffer numberFrames:inNumberFrames];
+	BKInt numFrames = [self generateFrames:outBuffer numberFrames:inNumberFrames];
+
+	// no less frames generated; there may no tracks be attached
+	if (numFrames < inNumberFrames) {
+		memset (outBuffer, 0, (inNumberFrames - numFrames) * context.numChannels * sizeof (SInt16));
+	}
 }
 
 - (BKInt)generateFrames:(SInt16 *)outBuffer numberFrames:(UInt32)inNumberFrames
