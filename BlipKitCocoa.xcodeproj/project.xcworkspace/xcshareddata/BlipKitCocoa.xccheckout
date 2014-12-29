@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>86DF8B14-C742-40A7-BEA7-B7A15CA18D45</string>
+	<key>IDESourceControlProjectName</key>
+	<string>BlipKitCocoa</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>394241149579F9D7F173293E959638EA1487839B</key>
+		<string>https://bitbucket.org/detomon/blip-tap.git</string>
+		<key>ABB1A4932ED945489C6C97A44B46F0B9A9646E0B</key>
+		<string>https://github.com/detomon/BlipKit/</string>
+		<key>B4C5BAE67CD30759EAFF96F94C09EA95DF8CBDBA</key>
+		<string>https://github.com/detomon/BlipKitCocoa.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>BlipKitCocoa.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>394241149579F9D7F173293E959638EA1487839B</key>
+		<string>../../..</string>
+		<key>ABB1A4932ED945489C6C97A44B46F0B9A9646E0B</key>
+		<string>../..bliplay/BlipKit</string>
+		<key>B4C5BAE67CD30759EAFF96F94C09EA95DF8CBDBA</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/detomon/BlipKitCocoa.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>B4C5BAE67CD30759EAFF96F94C09EA95DF8CBDBA</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>394241149579F9D7F173293E959638EA1487839B</string>
+			<key>IDESourceControlWCCName</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>ABB1A4932ED945489C6C97A44B46F0B9A9646E0B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>BlipKit</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B4C5BAE67CD30759EAFF96F94C09EA95DF8CBDBA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>BlipKitCocoa</string>
+		</dict>
+	</array>
+</dict>
+</plist>
