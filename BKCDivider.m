@@ -137,6 +137,10 @@ static BKEnum dividerFunc (BKCallbackInfo * info, void * userInfo)
 
 	res = BKContextAttachDivider (context.context, & divider, BK_CLOCK_TYPE_BEAT);
 
+	if (res != 0) {
+		[newContext detachDivider:self];
+	}
+
 	[newContext unlock];
 
 	return res >= 0;
