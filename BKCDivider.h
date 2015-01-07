@@ -37,7 +37,7 @@
 @property (readonly, nonatomic) BKCContext * context;
 
 /**
- * Block which is called every every specified number of ticks
+ * Block which is called every specified number of ticks
  */
 @property (copy, nonatomic) BKInt (^ block) (BKCContext * context, BKCallbackInfo * callbackInfo);
 
