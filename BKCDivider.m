@@ -111,6 +111,7 @@ static BKEnum dividerFunc (BKCallbackInfo * info, void * userInfo)
 - (void)setTicks:(NSInteger)newTicks
 {
 	ticks = newTicks;
+	divider.divider = (BKInt)ticks;
 }
 
 - (NSInteger)ticks
