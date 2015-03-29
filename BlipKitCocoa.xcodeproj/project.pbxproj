@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F48805691A5DAEC7008099AC /* BKCCompiler.h in Headers */ = {isa = PBXBuildFile; fileRef = F48805651A5DAEC7008099AC /* BKCCompiler.h */; };
+		F488056A1A5DAEC7008099AC /* BKCParser.h in Headers */ = {isa = PBXBuildFile; fileRef = F48805661A5DAEC7008099AC /* BKCParser.h */; };
+		F488056B1A5DAEC7008099AC /* BKCCompiler.m in Sources */ = {isa = PBXBuildFile; fileRef = F48805671A5DAEC7008099AC /* BKCCompiler.m */; };
+		F488056C1A5DAEC7008099AC /* BKCParser.m in Sources */ = {isa = PBXBuildFile; fileRef = F48805681A5DAEC7008099AC /* BKCParser.m */; };
 		F48A7D261A5D3602006B028E /* BKArray.c in Sources */ = {isa = PBXBuildFile; fileRef = F48A7D151A5D3602006B028E /* BKArray.c */; };
 		F48A7D271A5D3602006B028E /* BKArray.h in Headers */ = {isa = PBXBuildFile; fileRef = F48A7D161A5D3602006B028E /* BKArray.h */; };
 		F48A7D281A5D3602006B028E /* BKByteBuffer.c in Sources */ = {isa = PBXBuildFile; fileRef = F48A7D171A5D3602006B028E /* BKByteBuffer.c */; };
@@ -81,6 +85,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F48805651A5DAEC7008099AC /* BKCCompiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKCCompiler.h; sourceTree = "<group>"; };
+		F48805661A5DAEC7008099AC /* BKCParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKCParser.h; sourceTree = "<group>"; };
+		F48805671A5DAEC7008099AC /* BKCCompiler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKCCompiler.m; sourceTree = "<group>"; };
+		F48805681A5DAEC7008099AC /* BKCParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKCParser.m; sourceTree = "<group>"; };
 		F48A7D151A5D3602006B028E /* BKArray.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BKArray.c; sourceTree = "<group>"; };
 		F48A7D161A5D3602006B028E /* BKArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKArray.h; sourceTree = "<group>"; };
 		F48A7D171A5D3602006B028E /* BKByteBuffer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BKByteBuffer.c; sourceTree = "<group>"; };
@@ -227,6 +235,10 @@
 				F4B881FB1A4C272400B94C72 /* BKCTrack.m */,
 				F4B881F31A4C272400B94C72 /* BKCWaveform.h */,
 				F4B881FC1A4C272400B94C72 /* BKCWaveform.m */,
+				F48805651A5DAEC7008099AC /* BKCCompiler.h */,
+				F48805661A5DAEC7008099AC /* BKCParser.h */,
+				F48805671A5DAEC7008099AC /* BKCCompiler.m */,
+				F48805681A5DAEC7008099AC /* BKCParser.m */,
 				F4B8820F1A4C27C300B94C72 /* BlipKit */,
 				F48A7D141A5D3602006B028E /* bliparser */,
 			);
@@ -301,7 +313,9 @@
 				F4B882051A4C272400B94C72 /* BKCWaveform.h in Headers */,
 				F4B882031A4C272400B94C72 /* BKCSequence.h in Headers */,
 				F4B881FD1A4C272400B94C72 /* BKCAudioUnit.h in Headers */,
+				F488056A1A5DAEC7008099AC /* BKCParser.h in Headers */,
 				F4B8823E1A4C27C300B94C72 /* BKContext.h in Headers */,
+				F48805691A5DAEC7008099AC /* BKCCompiler.h in Headers */,
 				F48A7D331A5D3602006B028E /* BKString.h in Headers */,
 				F4B8824C1A4C27C300B94C72 /* BKSequence.h in Headers */,
 				F4B882481A4C27C300B94C72 /* BKInterpolation.h in Headers */,
@@ -403,11 +417,13 @@
 				F4B8823D1A4C27C300B94C72 /* BKContext.c in Sources */,
 				F4B882091A4C272400B94C72 /* BKCDivider.m in Sources */,
 				F4B8820A1A4C272400B94C72 /* BKCInstrument.m in Sources */,
+				F488056B1A5DAEC7008099AC /* BKCCompiler.m in Sources */,
 				F48A7D321A5D3602006B028E /* BKString.c in Sources */,
 				F4B8823F1A4C27C300B94C72 /* BKData.c in Sources */,
 				F4B8823A1A4C27C300B94C72 /* BKClock.c in Sources */,
 				F4B8820E1A4C272400B94C72 /* BKCWaveform.m in Sources */,
 				F48A7D2E1A5D3602006B028E /* BKInterpreter.c in Sources */,
+				F488056C1A5DAEC7008099AC /* BKCParser.m in Sources */,
 				F4B8824E1A4C27C300B94C72 /* BKTone.c in Sources */,
 				F4B882581A4C27C300B94C72 /* BKWaveFileWriter.c in Sources */,
 				F4B882441A4C27C300B94C72 /* BKInstrument.c in Sources */,
