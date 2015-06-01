@@ -81,6 +81,22 @@
 	return context.numChannels;
 }
 
+- (UInt32)clockPeriod
+{
+	BKTime time;
+
+	BKGetPtr (& context, BK_CLOCK_PERIOD, & time, sizeof (BKTime));
+
+	return (1.0 / ((double) BKTimeGetTime (time) + (double) BKTimeGetFrac(time) / BK_FINT20_UNIT));
+}
+
+- (void)setClockPeriod:(UInt32)newClockPeriod
+{
+	BKTime time = BKTimeFromSeconds (& context, 1.0 / newClockPeriod);
+
+	BKSetPtr (& context, BK_CLOCK_PERIOD, & time, sizeof (BKTime));
+}
+
 - (BOOL)start
 {
 	return [self.audioUnit start];

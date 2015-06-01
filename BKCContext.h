@@ -68,6 +68,11 @@
 @property (readonly, nonatomic) UInt32 numberOfChannels;
 
 /**
+ * Number of ticks per second
+ */
+@property (readwrite, nonatomic) UInt32 clockPeriod;
+
+/**
  * Initialize with number of channels and sample rate
  *
  * The supported range goes from 16000 to 96000
