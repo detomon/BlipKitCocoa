@@ -77,7 +77,6 @@ typedef NS_ENUM(NSInteger, BKCAttr)
 	BKCAttrEffectDivider         = BK_EFFECT_DIVIDER,
 	BKCAttrInstrumentDivider     = BK_INSTRUMENT_DIVIDER,
 	BKCAttrTriangleIgnoresVolume = BK_TRIANGLE_IGNORES_VOLUME,
-	BKCAttrHaltSilentPhase       = BK_HALT_SILENT_PHASE,
 	BKCAttrDataAttrType          = BK_DATA_ATTR_TYPE,
 	BKCAttrNumFrames             = BK_NUM_FRAMES,
 	BKCAttrWaveformType          = BK_WAVEFORM_TYPE,
