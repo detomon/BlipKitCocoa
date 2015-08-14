@@ -368,7 +368,7 @@
 		F4B881C81A4C26DC00B94C72 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = monoxid;
 				TargetAttributes = {
 					F4B881CF1A4C26DC00B94C72 = {
@@ -516,6 +516,7 @@
 		F4B881E51A4C26DC00B94C72 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				EXECUTABLE_PREFIX = lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "macosx ios iphonesimulator iphoneos";
@@ -526,6 +527,7 @@
 		F4B881E61A4C26DC00B94C72 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				EXECUTABLE_PREFIX = lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "macosx ios iphonesimulator iphoneos";
