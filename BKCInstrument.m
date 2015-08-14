@@ -184,7 +184,7 @@
 - (instancetype)initWithEnvelopeADSR:(NSInteger)attack decay:(NSInteger)decay sustain:(NSInteger)sustain release:(NSInteger)release
 {
 	if (self = [self init]) {
-		if ([self setEnvelopeADSR:attack decay:decay sustain:sustain release:release] < 0) {
+		if ([self setEnvelopeADSR:attack decay:decay sustain:sustain release:release] == NO) {
 			NSLog (@"*** Failed to initialize instrument with ADSR envelope");
 			return nil;
 		}
@@ -217,7 +217,7 @@
 
 - (BOOL)setEnvelopeADSR:(NSInteger)attack decay:(NSInteger)decay sustain:(NSInteger)sustain release:(NSInteger)release
 {
-	return [[self sequenceWithType:BK_SEQUENCE_VOLUME] setEnvelopeADSR:attack decay:decay sustain:sustain release:release] >= 0;
+	return [[self sequenceWithType:BK_SEQUENCE_VOLUME] setEnvelopeADSR:attack decay:decay sustain:sustain release:release];
 }
 
 + (Class)sequenceClass
