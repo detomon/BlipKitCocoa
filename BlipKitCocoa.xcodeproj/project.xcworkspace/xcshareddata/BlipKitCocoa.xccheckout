@@ -5,15 +5,13 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>86DF8B14-C742-40A7-BEA7-B7A15CA18D45</string>
+	<string>1D19D8B5-15A9-45A7-8984-9AB67DBB92DF</string>
 	<key>IDESourceControlProjectName</key>
 	<string>BlipKitCocoa</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>1216462336972F9BD0CF251AFBFDB1141159238A</key>
 		<string>https://github.com/detomon/bliplay.git</string>
-		<key>394241149579F9D7F173293E959638EA1487839B</key>
-		<string>https://bitbucket.org/detomon/blip-tap.git</string>
 		<key>ABB1A4932ED945489C6C97A44B46F0B9A9646E0B</key>
 		<string>https://github.com/detomon/BlipKit/</string>
 		<key>B4C5BAE67CD30759EAFF96F94C09EA95DF8CBDBA</key>
@@ -25,8 +23,6 @@
 	<dict>
 		<key>1216462336972F9BD0CF251AFBFDB1141159238A</key>
 		<string>../../bliplay</string>
-		<key>394241149579F9D7F173293E959638EA1487839B</key>
-		<string>../../..</string>
 		<key>ABB1A4932ED945489C6C97A44B46F0B9A9646E0B</key>
 		<string>../..bliplay/BlipKit</string>
 		<key>B4C5BAE67CD30759EAFF96F94C09EA95DF8CBDBA</key>
@@ -40,14 +36,6 @@
 	<string>B4C5BAE67CD30759EAFF96F94C09EA95DF8CBDBA</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>394241149579F9D7F173293E959638EA1487839B</string>
-			<key>IDESourceControlWCCName</key>
-			<string></string>
-		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
