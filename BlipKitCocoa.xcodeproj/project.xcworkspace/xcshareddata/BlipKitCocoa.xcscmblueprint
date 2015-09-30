@@ -1,0 +1,44 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "B4C5BAE67CD30759EAFF96F94C09EA95DF8CBDBA",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "B4C5BAE67CD30759EAFF96F94C09EA95DF8CBDBA" : 0,
+    "1216462336972F9BD0CF251AFBFDB1141159238A" : 0,
+    "394241149579F9D7F173293E959638EA1487839B" : 0,
+    "ABB1A4932ED945489C6C97A44B46F0B9A9646E0B" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "86DF8B14-C742-40A7-BEA7-B7A15CA18D45",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "B4C5BAE67CD30759EAFF96F94C09EA95DF8CBDBA" : "BlipKitCocoa",
+    "1216462336972F9BD0CF251AFBFDB1141159238A" : "BlipKitCocoa\/bliplay",
+    "394241149579F9D7F173293E959638EA1487839B" : "",
+    "ABB1A4932ED945489C6C97A44B46F0B9A9646E0B" : "BlipKitCocoabliplay\/BlipKit"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "BlipKitCocoa",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "BlipKitCocoa.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/detomon\/bliplay.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1216462336972F9BD0CF251AFBFDB1141159238A"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/detomon\/blip-tap.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "394241149579F9D7F173293E959638EA1487839B"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/detomon\/BlipKit\/",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "ABB1A4932ED945489C6C97A44B46F0B9A9646E0B"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/detomon\/BlipKitCocoa.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B4C5BAE67CD30759EAFF96F94C09EA95DF8CBDBA"
+    }
+  ]
+}
