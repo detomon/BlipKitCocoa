@@ -33,7 +33,7 @@
 
 @interface BKCTrack : NSObject <BKCAttributes>
 {
-	BKTrack                          track;
+	BKTrack                        * track;
 	__unsafe_unretained BKCContext * context;
 	BKCInstrument                  * instrument;
 	BKCWaveform                    * waveform;
@@ -48,7 +48,7 @@
 /**
  * The underlaying BlipKit track
  */
-@property (readonly, nonatomic) BKTrack * track;
+@property (readwrite, nonatomic) BKTrack * track;
 
 /**
  * Current instrument

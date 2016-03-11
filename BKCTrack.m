@@ -72,16 +72,7 @@
 
 - (instancetype)initWithWaveform:(BKCWaveform *)theWaveform
 {
-	BKInt res;
-
 	if ((self = [super init])) {
-		res = BKTrackInit (& track, BK_SQUARE);
-
-		if (res < 0) {
-			NSLog (@"*** Couldn't initialize BKTrack: %d", res);
-			return nil;
-		}
-
 		self.waveform = theWaveform;
 	}
 
@@ -91,13 +82,31 @@
 - (void)dealloc
 {
 	[context lock];
-	BKDispose (& track);
+	BKDispose (track);
 	[context unlock];
 }
 
 - (BKTrack *)track
 {
-	return & track;
+	if (!track) {
+		BKInt res = BKTrackAlloc (& track, BK_SQUARE);
+
+		if (res < 0) {
+			NSLog (@"*** Couldn't initialize BKTrack: %d", res);
+			return nil;
+		}
+	}
+
+	return track;
+}
+
+- (void)setTrack:(BKTrack *)newTrack
+{
+	if (newTrack) {
+		[context lock];
+		track = newTrack;
+		[context unlock];
+	}
 }
 
 - (BKCInstrument *)instrument
@@ -110,7 +119,7 @@
 	[context lock];
 
 	instrument = newInstrument;
-	BKSetPtr (& track, BK_INSTRUMENT, instrument.instrument, 0);
+	BKSetPtr (self.track, BK_INSTRUMENT, instrument.instrument, 0);
 
 	[context unlock];
 }
@@ -130,10 +139,10 @@
 	waveform = newWaveform;
 
 	if (waveform.type == BK_CUSTOM) {
-		BKSetPtr (& track, BK_WAVEFORM, waveform.data, 0);
+		BKSetPtr (self.track, BK_WAVEFORM, waveform.data, 0);
 	}
 	else {
-		BKSetAttr (& track, BK_WAVEFORM, waveform.type);
+		BKSetAttr (self.track, BK_WAVEFORM, waveform.type);
 	}
 
 	[context unlock];
@@ -150,7 +159,7 @@
 
 	sample = newSample;
 
-	BKSetPtr (& track, BK_SAMPLE, newSample.data, 0);
+	BKSetPtr (self.track, BK_SAMPLE, newSample.data, 0);
 
 	[context unlock];
 }
@@ -169,7 +178,7 @@
 	if (![newContext attachTrack:self])
 		return NO;
 
-	res = BKTrackAttach (& track, context.context);
+	res = BKTrackAttach (track, context.renderContext);
 
 	[newContext unlock];
 
@@ -181,7 +190,7 @@
 	[context lock];
 
 	if ([context detachTrack:self])
-		BKTrackDetach (& track);
+		BKTrackDetach (track);
 
 	[context unlock];
 	context = nil;
@@ -190,7 +199,7 @@
 - (void)reset
 {
 	[context lock];
-	BKTrackReset (& track);
+	BKTrackReset (track);
 	[context unlock];
 }
 
@@ -199,7 +208,7 @@
 	BKInt res;
 
 	[context lock];
-	res = BKSetAttr (& track, attribute, value);
+	res = BKSetAttr (self.track, attribute, value);
 	[context unlock];
 
 	return res >= 0;
@@ -210,7 +219,7 @@
 	BKInt res;
 
 	[context lock];
-	res = BKGetAttr (& track, attribute, value);
+	res = BKGetAttr (self.track, attribute, value);
 	[context unlock];
 
 	return res >= 0;
@@ -223,10 +232,10 @@
 	[context lock];
 
 	if (attribute & BK_EFFECT_TYPE) {
-		res = BKTrackSetEffect (& track, attribute, value, (BKInt)size);
+		res = BKTrackSetEffect (track, attribute, value, (BKInt)size);
 	}
 	else {
-		res = BKSetPtr (& track, attribute, value, size);
+		res = BKSetPtr (self.track, attribute, value, size);
 	}
 	
 	[context unlock];
@@ -241,10 +250,10 @@
 	[context lock];
 
 	if (attribute & BK_EFFECT_TYPE) {
-		res = BKTrackGetEffect (& track, attribute, value, (BKInt)size);
+		res = BKTrackGetEffect (track, attribute, value, (BKInt)size);
 	}
 	else {
-		res = BKGetPtr (& track, attribute, value, size);
+		res = BKGetPtr (self.track, attribute, value, size);
 	}
 
 	[context unlock];
@@ -264,12 +273,12 @@
 
 - (BKInt)setEffect:(BKCAttr)effect values:(BKInt const [3])values
 {
-	return BKTrackSetEffect (& track, effect, values, (BKInt)sizeof (BKInt [3]));
+	return BKTrackSetEffect (track, effect, values, (BKInt)sizeof (BKInt [3]));
 }
 
 - (BKInt)getEffect:(BKCAttr)effect values:(BKInt [3])values
 {
-	return BKTrackGetEffect (& track, effect, values, sizeof (BKInt [3]));
+	return BKTrackGetEffect (track, effect, values, sizeof (BKInt [3]));
 }
 
 @end

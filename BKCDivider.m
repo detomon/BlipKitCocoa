@@ -135,7 +135,7 @@ static BKEnum dividerFunc (BKCallbackInfo * info, void * userInfo)
 		return NO;
 	}
 
-	res = BKContextAttachDivider (context.context, & divider, BK_CLOCK_TYPE_BEAT);
+	res = BKContextAttachDivider (context.renderContext, & divider, BK_CLOCK_TYPE_BEAT);
 
 	if (res != 0) {
 		[newContext detachDivider:self];

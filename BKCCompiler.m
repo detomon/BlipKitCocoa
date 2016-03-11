@@ -28,11 +28,17 @@
 - (instancetype)init
 {
 	if ((self = [super init])) {
-		if (BKCompilerInit (& compiler) != 0) {
+		if (BKTKTokenizerInit (& tokenizer) != 0) {
 			return nil;
 		}
 
-		parser = [[BKCParser alloc] init];
+		if (BKTKParserInit (& parser) != 0) {
+			return nil;
+		}
+
+		if (BKTKCompilerInit (& compiler) != 0) {
+			return nil;
+		}
 	}
 
 	return self;
@@ -40,31 +46,89 @@
 
 - (void)dealloc
 {
+	BKDispose (& tokenizer);
+	BKDispose (& parser);
 	BKDispose (& compiler);
 }
 
-- (BKCompiler *)compiler
+- (BKTKTokenizer *)tokenizer
+{
+	return & tokenizer;
+}
+
+- (BKTKParser *)parser
+{
+	return & parser;
+}
+
+- (BKTKCompiler *)compiler
 {
 	return & compiler;
 }
 
-- (void)compileString:(NSString *)string
+- (BOOL)compileString:(NSString *)string error:(NSError **)error
 {
-	[self compileData:[string dataUsingEncoding:NSUTF8StringEncoding]];
+	return [self compileData:[string dataUsingEncoding:NSUTF8StringEncoding] error:error];
 }
 
-- (void)compileData:(NSData *)data
+- (BOOL)compileData:(NSData *)data error:(NSError **)error
 {
-	[self compileBytes:data.bytes size:data.length];
+	return [self compileBytes:data.bytes size:data.length error:error];
 }
 
-- (void)compileBytes:(void const *)bytes size:(NSUInteger)size
+static BKInt putTokens (BKTKToken const * tokens, BKUSize count, BKCCompiler * self)
 {
-	BKCompilerReset (& compiler, YES);
+	BKInt res;
 
-	if (BKCompilerCompile (& compiler, parser.parser, 0) != 0) {
-		
+	if ((res = BKTKParserPutTokens (& self -> parser, tokens, count)) != 0) {
+		return res;
 	}
+
+	return 0;
+}
+
+- (BOOL)compileBytes:(void const *)bytes size:(NSUInteger)size error:(NSError **)error
+{
+	BKInt res;
+	NSMutableString * errorMsg;
+
+	[self reset];
+	*error = nil;
+
+	BKTKTokenizerPutChars (& tokenizer, bytes, size, (BKTKPutTokensFunc) putTokens, (__bridge void *) self);
+
+	if (BKTKTokenizerHasError (& tokenizer)) {
+		if (!errorMsg) {
+			errorMsg = [[NSMutableString alloc] init];
+		}
+
+		[errorMsg appendFormat:@"%s", tokenizer.buffer];
+	}
+
+	if (BKTKParserHasError (& parser)) {
+		if (!errorMsg) {
+			errorMsg = [[NSMutableString alloc] init];
+		}
+
+		[errorMsg appendFormat:@"%s", parser.buffer];
+	}
+
+	if (BKTKTokenizerHasError (& tokenizer) || BKTKParserHasError (& parser)) {
+		*error = [NSError errorWithDomain:NSPOSIXErrorDomain code:res userInfo:@{
+			NSLocalizedDescriptionKey: errorMsg
+		}];
+
+		return NO;
+	}
+
+	return YES;
+}
+
+- (void)reset
+{
+	BKTKCompilerReset (& compiler);
+	BKTKParserReset (& parser);
+	BKTKTokenizerReset (& tokenizer);
 }
 
 @end

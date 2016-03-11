@@ -22,6 +22,7 @@
  */
 
 #import "BKCContext.h"
+#import "BKCTrack.h"
 
 #define DEFAULT_NUM_CHANNELS 2
 #define DEFAULT_SAMPLE_RATE 44100
@@ -41,10 +42,17 @@
 	BKInt res;
 
 	if ((self = [super init])) {
-		res = BKContextInit (& context, numberOfChannels, sampleRate);
+		res = BKContextInit (& renderCtx, numberOfChannels, sampleRate);
 
 		if (res < 0) {
 			NSLog (@"*** Couldn't initialize BKContext: %d", res);
+			return nil;
+		}
+
+		res = BKTKContextInit (& parserCtx, 0);
+
+		if (res < 0) {
+			NSLog (@"*** Couldn't initialize BKTKContext: %d", res);
 			return nil;
 		}
 
@@ -58,12 +66,18 @@
 
 - (void)dealloc
 {
-	BKDispose (& context);
+	BKDispose (& renderCtx);
+	BKDispose (& parserCtx);
 }
 
-- (BKContext *)context
+- (BKContext *)renderContext
 {
-	return & context;
+	return & renderCtx;
+}
+
+- (BKTKContext *)parserContext
+{
+	return & parserCtx;
 }
 
 - (NSArray *)tracks
@@ -73,28 +87,28 @@
 
 - (UInt32)sampleRate
 {
-	return context.sampleRate;
+	return renderCtx.sampleRate;
 }
 
 - (UInt32)numberOfChannels
 {
-	return context.numChannels;
+	return renderCtx.numChannels;
 }
 
 - (UInt32)clockPeriod
 {
 	BKTime time;
 
-	BKGetPtr (& context, BK_CLOCK_PERIOD, & time, sizeof (BKTime));
+	BKGetPtr (& renderCtx, BK_CLOCK_PERIOD, & time, sizeof (BKTime));
 
 	return (1.0 / ((double) BKTimeGetTime (time) + (double) BKTimeGetFrac(time) / BK_FINT20_UNIT));
 }
 
 - (void)setClockPeriod:(UInt32)newClockPeriod
 {
-	BKTime time = BKTimeFromSeconds (& context, 1.0 / newClockPeriod);
+	BKTime time = BKTimeFromSeconds (& renderCtx, 1.0 / newClockPeriod);
 
-	BKSetPtr (& context, BK_CLOCK_PERIOD, & time, sizeof (BKTime));
+	BKSetPtr (& renderCtx, BK_CLOCK_PERIOD, & time, sizeof (BKTime));
 }
 
 - (BOOL)start
@@ -109,7 +123,8 @@
 
 - (void)reset
 {
-	BKContextReset (& context);
+	BKContextReset (& renderCtx);
+	BKTKContextReset (& parserCtx);
 }
 
 - (BOOL)setAttribute:(BKCAttr)attribute value:(BKInt)value
@@ -117,7 +132,7 @@
 	BKInt res;
 
 	[self lock];
-	res = BKSetAttr (& context, attribute, value);
+	res = BKSetAttr (& renderCtx, attribute, value);
 	[self unlock];
 
 	return res >= 0;
@@ -128,7 +143,7 @@
 	BKInt res;
 
 	[self lock];
-	res = BKGetAttr (& context, attribute, value);
+	res = BKGetAttr (& renderCtx, attribute, value);
 	[self unlock];
 
 	return res >= 0;
@@ -139,7 +154,7 @@
 	BKInt res;
 
 	[self lock];
-	res = BKSetPtr (& context, attribute, value, size);
+	res = BKSetPtr (& renderCtx, attribute, value, size);
 	[self unlock];
 
 	return res >= 0;
@@ -150,7 +165,7 @@
 	BKInt res;
 
 	[self lock];
-	res = BKGetPtr (& context, attribute, value, size);
+	res = BKGetPtr (& renderCtx, attribute, value, size);
 	[self unlock];
 
 	return res >= 0;
@@ -191,15 +206,39 @@
 {
 	BKInt numFrames = [self generateFrames:outBuffer numberFrames:inNumberFrames];
 
-	// no less frames generated; there may no tracks be attached
+	// less frames generated; there may be no tracks attached
 	if (numFrames < inNumberFrames) {
-		memset (outBuffer, 0, (inNumberFrames - numFrames) * context.numChannels * sizeof (SInt16));
+		memset (outBuffer, 0, (inNumberFrames - numFrames) * renderCtx.numChannels * sizeof (SInt16));
 	}
 }
 
 - (BKInt)generateFrames:(SInt16 *)outBuffer numberFrames:(UInt32)inNumberFrames
 {
-	return BKContextGenerate (& context, outBuffer, inNumberFrames);
+	return BKContextGenerate (& renderCtx, outBuffer, inNumberFrames);
+}
+
+- (BOOL)addTracksFromCompiler:(BKCCompiler *)compiler
+{
+	BKInt res;
+	BKTKTrack * parserTrack;
+	BKCTrack * track;
+
+	if ((res = BKTKContextAttach (& parserCtx, & renderCtx)) != 0) {
+		return NO;
+	}
+
+	for (BKUSize i = 0; i < parserCtx.tracks.len; i ++) {
+		parserTrack = *(BKTKTrack **) BKArrayItemAt (&parserCtx.tracks, i);
+
+		if (parserTrack) {
+			track = [[BKCTrack alloc] init];
+			track.track = &parserTrack -> renderTrack;
+			[tracks addObject:track];
+			[track attachToContext:self];
+		}
+	}
+
+	return YES;
 }
 
 @end

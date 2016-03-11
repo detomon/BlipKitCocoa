@@ -25,10 +25,13 @@
 #import "BlipKit.h"
 #import "BKCAudioUnit.h"
 #import "BKCBase.h"
+#import "BKCCompiler.h"
+#import "BKTKContext.h"
 
 @interface BKCContext : NSObject <BKCAttributes, BKCAudioUnitDelegate>
 {
-	BKContext        context;
+	BKContext        renderCtx;
+	BKTKContext      parserCtx;
 	NSMutableArray * tracks;
 	NSMutableArray * dividers;
 }
@@ -36,7 +39,12 @@
 /**
  * The underlaying BlipKit context
  */
-@property (readonly, nonatomic)  BKContext * context;
+@property (readonly, nonatomic)  BKContext * renderContext;
+
+/**
+ * The underlaying parser context
+ */
+@property (readonly, nonatomic)  BKTKContext * parserContext;
 
 /**
  * An array of attached tracks
@@ -85,6 +93,11 @@
  * Buffer must have have space for inNumberFrames * numberOfChannels frames
  */
 - (BKInt)generateFrames:(SInt16 *)outBuffer numberFrames:(UInt32)inNumberFrames;
+
+/**
+ * Add tracks from compiler
+ */
+- (BOOL)addTracksFromCompiler:(BKCCompiler *)compiler;
 
 /**
  * Calls audioUnit's start method

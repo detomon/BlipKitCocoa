@@ -23,33 +23,45 @@
 
 #import <Foundation/Foundation.h>
 #import "BlipKit.h"
-#import "BKCompiler.h"
-#import "BKCParser.h"
+#import "BKTKCompiler.h"
+#import "BKTKParser.h"
+#import "BKTKTokenizer.h"
 
 @interface BKCCompiler : NSObject
 {
-	BKCompiler  compiler;
-	BKCParser * parser;
+	BKTKCompiler  compiler;
+	BKTKTokenizer tokenizer;
+	BKTKParser    parser;
 }
+
+/**
+ * The underlaying tokenizer object
+ */
+@property (readonly) BKTKTokenizer * tokenizer;
+
+/**
+ * The underlaying parser object
+ */
+@property (readonly) BKTKParser * parser;
 
 /**
  * The underlaying compiler object
  */
-@property (readonly) BKCompiler * compiler;
+@property (readonly) BKTKCompiler * compiler;
 
 /**
  * Compile string
  */
-- (void)compileString:(NSString *)string;
+- (BOOL)compileString:(NSString *)string error:(NSError **)error;
 
 /**
  * Compile data
  */
-- (void)compileData:(NSData *)data;
+- (BOOL)compileData:(NSData *)data error:(NSError **)error;
 
 /**
  * Compile bytes
  */
-- (void)compileBytes:(void const *)bytes size:(NSUInteger)size;
+- (BOOL)compileBytes:(void const *)bytes size:(NSUInteger)size error:(NSError **)error;
 
 @end
