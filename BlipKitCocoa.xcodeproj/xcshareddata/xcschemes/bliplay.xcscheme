@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F4B2968A1D02D511009F48DE"
-               BuildableName = "BlipKitCocoa.framework"
-               BlueprintName = "BlipKitCocoa"
+               BlueprintIdentifier = "F4B296A91D02D56F009F48DE"
+               BuildableName = "libbliplay.a"
+               BlueprintName = "bliplay"
                ReferencedContainer = "container:BlipKitCocoa.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F4B2968A1D02D511009F48DE"
-            BuildableName = "BlipKitCocoa.framework"
-            BlueprintName = "BlipKitCocoa"
+            BlueprintIdentifier = "F4B296A91D02D56F009F48DE"
+            BuildableName = "libbliplay.a"
+            BlueprintName = "bliplay"
             ReferencedContainer = "container:BlipKitCocoa.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -63,9 +63,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F4B2968A1D02D511009F48DE"
-            BuildableName = "BlipKitCocoa.framework"
-            BlueprintName = "BlipKitCocoa"
+            BlueprintIdentifier = "F4B296A91D02D56F009F48DE"
+            BuildableName = "libbliplay.a"
+            BlueprintName = "bliplay"
             ReferencedContainer = "container:BlipKitCocoa.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

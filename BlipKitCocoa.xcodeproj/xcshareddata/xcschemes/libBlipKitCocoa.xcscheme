@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F4B2968A1D02D511009F48DE"
-               BuildableName = "BlipKitCocoa.framework"
-               BlueprintName = "BlipKitCocoa"
+               BlueprintIdentifier = "F4B881CF1A4C26DC00B94C72"
+               BuildableName = "libBlipKitCocoa.a"
+               BlueprintName = "libBlipKitCocoa"
                ReferencedContainer = "container:BlipKitCocoa.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -29,6 +29,15 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "F4B881CF1A4C26DC00B94C72"
+            BuildableName = "libBlipKitCocoa.a"
+            BlueprintName = "libBlipKitCocoa"
+            ReferencedContainer = "container:BlipKitCocoa.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -40,14 +49,15 @@
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
+      enableAddressSanitizer = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F4B2968A1D02D511009F48DE"
-            BuildableName = "BlipKitCocoa.framework"
-            BlueprintName = "BlipKitCocoa"
+            BlueprintIdentifier = "F4B881CF1A4C26DC00B94C72"
+            BuildableName = "libBlipKitCocoa.a"
+            BlueprintName = "libBlipKitCocoa"
             ReferencedContainer = "container:BlipKitCocoa.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -63,9 +73,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F4B2968A1D02D511009F48DE"
-            BuildableName = "BlipKitCocoa.framework"
-            BlueprintName = "BlipKitCocoa"
+            BlueprintIdentifier = "F4B881CF1A4C26DC00B94C72"
+            BuildableName = "libBlipKitCocoa.a"
+            BlueprintName = "libBlipKitCocoa"
             ReferencedContainer = "container:BlipKitCocoa.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
