@@ -95,7 +95,7 @@ static BKInt putTokens (BKTKToken const * tokens, BKUSize count, BKCCompiler * s
 	[self reset];
 	*error = nil;
 
-	BKTKTokenizerPutChars (& tokenizer, bytes, size, (BKTKPutTokensFunc) putTokens, (__bridge void *) self);
+	BKTKTokenizerPutChars (& tokenizer, bytes, size, (BKTKPutTokenFunc) putTokens, (__bridge void *) self);
 
 	if (BKTKTokenizerHasError (& tokenizer)) {
 		if (!errorMsg) {

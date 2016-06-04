@@ -28,13 +28,12 @@
 {
 	BKDivider divider;
 	NSInteger ticks;
-	__unsafe_unretained BKCContext * context;
 }
 
 /**
  * The context which this divider is attached to
  */
-@property (readonly, nonatomic) BKCContext * context;
+@property (readonly, nonatomic, weak) BKCContext * context;
 
 /**
  * Block which is called every specified number of ticks

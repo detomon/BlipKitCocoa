@@ -26,7 +26,7 @@
 
 @interface BKCTrack ()
 
-@property (readwrite) BKCContext * context;
+@property (readwrite, weak) BKCContext * context;
 
 @end
 

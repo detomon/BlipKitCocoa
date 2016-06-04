@@ -33,17 +33,16 @@
 
 @interface BKCTrack : NSObject <BKCAttributes>
 {
-	BKTrack                        * track;
-	__unsafe_unretained BKCContext * context;
-	BKCInstrument                  * instrument;
-	BKCWaveform                    * waveform;
-	BKCSample                      * sample;
+	BKTrack       * track;
+	BKCInstrument * instrument;
+	BKCWaveform   * waveform;
+	BKCSample     * sample;
 }
 
 /**
  * The context which this track is attached to
  */
-@property (readonly, nonatomic) BKCContext * context;
+@property (readonly, nonatomic, weak) BKCContext * context;
 
 /**
  * The underlaying BlipKit track

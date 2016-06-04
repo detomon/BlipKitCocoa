@@ -25,7 +25,7 @@
 
 @interface BKCDivider ()
 
-@property (readwrite) BKCContext * context;
+@property (readwrite, weak) BKCContext * context;
 
 @end
 
