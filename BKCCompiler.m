@@ -89,7 +89,7 @@ static BKInt putTokens (BKTKToken const * tokens, BKUSize count, BKCCompiler * s
 
 - (BOOL)compileBytes:(void const *)bytes size:(NSUInteger)size error:(NSError **)error
 {
-	BKInt res;
+	BKInt res = 0;
 	NSMutableString * errorMsg;
 
 	[self reset];
