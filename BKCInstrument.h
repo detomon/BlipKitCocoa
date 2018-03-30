@@ -86,9 +86,9 @@ typedef enum: NSUInteger
 @property (readonly, nonatomic) BKInstrument * instrument;
 
 /**
- * Initialize instrument with ADSR volume envelope
+ * Initialize with given copy of given instrument.
  */
-- (instancetype)initWithEnvelopeADSR:(NSInteger)attack decay:(NSInteger)decay sustain:(NSInteger)sustain release:(NSInteger)release;
+- (instancetype)initWithInstrument:(BKInstrument const *)instrument;
 
 /**
  * Get sequence with type

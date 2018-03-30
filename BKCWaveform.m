@@ -111,6 +111,23 @@ static id sineWaveform;
 	return self;
 }
 
+- (instancetype)initWithData:(BKData const *)newData
+{
+	BKInt res;
+
+	if (self = [super init]) {
+		type = BK_CUSTOM;
+		res  = BKDataInitCopy(& data, newData);
+
+		if (res < 0) {
+			NSLog (@"*** Couldn't initialize BKData: %d", res);
+			return nil;
+		}
+	}
+
+	return self;
+}
+
 - (void)dealloc
 {
 	BKDispose (& data);

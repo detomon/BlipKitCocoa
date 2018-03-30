@@ -64,4 +64,19 @@
  */
 - (BOOL)compileBytes:(void const *)bytes size:(NSUInteger)size error:(NSError **)error;
 
+/**
+ * Get instrument by name
+ */
+- (BKInstrument *)instrumentByName:(NSString *)name;
+
+/**
+ * Get waveform by name
+ */
+- (BKData *)waveformByName:(NSString *)name;
+
+/**
+ * Get waveform by name
+ */
+- (BKData *)sampleByName:(NSString *)name;
+
 @end

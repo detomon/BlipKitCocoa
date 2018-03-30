@@ -168,6 +168,22 @@
 	return self;
 }
 
+- (instancetype)initWithData:(BKData const *)newData
+{
+	BKInt res;
+
+	if (self = [super init]) {
+		res = BKDataInitCopy(& data, newData);
+
+		if (res < 0) {
+			NSLog (@"*** Failed to copy data: %d", res);
+			return nil;
+		}
+	}
+
+	return self;
+}
+
 - (void)dealloc
 {
 	BKDispose (& data);

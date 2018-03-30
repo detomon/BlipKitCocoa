@@ -175,7 +175,7 @@
 	return self;
 }
 
-- (instancetype)initWithEnvelopeADSR:(NSInteger)attack decay:(NSInteger)decay sustain:(NSInteger)sustain release:(NSInteger)release
+- (instancetype)initWithInstrument:(BKInstrument *)theInstrument
 {
 	BKInt res;
 

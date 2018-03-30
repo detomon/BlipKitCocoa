@@ -134,6 +134,33 @@ static BKInt putToken (BKTKToken const * token, BKCCompiler * self)
 	return YES;
 }
 
+- (BKInstrument *)instrumentByName:(NSString *)name
+{
+	BKTKInstrument* instrument = NULL;
+
+	BKHashTableLookup(&compiler.instruments, name.UTF8String, (void **) &instrument);
+
+	return instrument ? &instrument->instr : NULL;
+}
+
+- (BKData *)waveformByName:(NSString *)name
+{
+	BKTKWaveform* waveform = NULL;
+
+	BKHashTableLookup(&compiler.waveforms, name.UTF8String, (void **) &waveform);
+
+	return waveform ? &waveform->data : NULL;
+}
+
+- (BKData *)sampleByName:(NSString *)name
+{
+	BKTKSample* sample = NULL;
+
+	BKHashTableLookup(&compiler.samples, name.UTF8String, (void**) &sample);
+
+	return sample ? &sample->data : NULL;
+}
+
 - (void)reset
 {
 	BKTKCompilerReset (& compiler);

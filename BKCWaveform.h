@@ -75,6 +75,11 @@
 - (instancetype)initWithValues:(BKFrame const *)values length:(NSUInteger)length;
 
 /**
+ * Initialize with given copy of given data.
+ */
+- (instancetype)initWithData:(BKData const *)data;
+
+/**
  * Set new values
  *
  * At least 2 values must be given

@@ -55,6 +55,11 @@
 - (instancetype)initWithWAVEFile:(NSString *)path;
 
 /**
+ * Initialize with given copy of given data.
+ */
+- (instancetype)initWithData:(BKData const *)data;
+
+/**
  * Replace frames
  */
 - (BKInt)loadFrames:(void const *)frames dataSize:(NSUInteger)dataSize numberOfChannels:(NSUInteger)numberOfChannels params:(BKEnum)params;
