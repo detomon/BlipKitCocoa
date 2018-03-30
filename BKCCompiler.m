@@ -76,11 +76,11 @@
 	return [self compileBytes:data.bytes size:data.length error:error];
 }
 
-static BKInt putTokens (BKTKToken const * tokens, BKUSize count, BKCCompiler * self)
+static BKInt putToken (BKTKToken const * token, BKCCompiler * self)
 {
 	BKInt res;
 
-	if ((res = BKTKParserPutTokens (& self -> parser, tokens, count)) != 0) {
+	if ((res = BKTKParserPutTokens (& self -> parser, token, 1)) != 0) {
 		return res;
 	}
 
@@ -90,30 +90,39 @@ static BKInt putTokens (BKTKToken const * tokens, BKUSize count, BKCCompiler * s
 - (BOOL)compileBytes:(void const *)bytes size:(NSUInteger)size error:(NSError **)error
 {
 	BKInt res = 0;
-	NSMutableString * errorMsg;
+	BKTKParserNode * nodeTree;
+	NSMutableString * errorMsg = [[NSMutableString alloc] init];
 
 	[self reset];
 	*error = nil;
 
-	BKTKTokenizerPutChars (& tokenizer, bytes, size, (BKTKPutTokenFunc) putTokens, (__bridge void *) self);
+	res = BKTKTokenizerPutChars (& tokenizer, bytes, size, (BKTKPutTokenFunc) putToken, (__bridge void *) self);
 
-	if (BKTKTokenizerHasError (& tokenizer)) {
-		if (!errorMsg) {
-			errorMsg = [[NSMutableString alloc] init];
-		}
-
-		[errorMsg appendFormat:@"%s", tokenizer.buffer];
+	// terminate parser
+	if (res == 0) {
+		res = BKTKTokenizerPutChars (& tokenizer, (void const *) "", 0, (BKTKPutTokenFunc) putToken, (__bridge void *) self);
 	}
 
 	if (BKTKParserHasError (& parser)) {
-		if (!errorMsg) {
-			errorMsg = [[NSMutableString alloc] init];
-		}
-
-		[errorMsg appendFormat:@"%s", parser.buffer];
+		[errorMsg appendFormat:@"%s\n", parser.buffer];
+	}
+	else if (BKTKTokenizerHasError (& tokenizer)) {
+		[errorMsg appendFormat:@"%s\n", tokenizer.buffer];
 	}
 
 	if (BKTKTokenizerHasError (& tokenizer) || BKTKParserHasError (& parser)) {
+		*error = [NSError errorWithDomain:NSPOSIXErrorDomain code:res userInfo:@{
+			NSLocalizedDescriptionKey: errorMsg
+		}];
+
+		return NO;
+	}
+
+	nodeTree = BKTKParserGetNodeTree (&parser);
+
+	if ((res = BKTKCompilerCompile (&compiler, nodeTree)) != 0) {
+		[errorMsg appendFormat:@"%s\n", compiler.error.str];
+
 		*error = [NSError errorWithDomain:NSPOSIXErrorDomain code:res userInfo:@{
 			NSLocalizedDescriptionKey: errorMsg
 		}];
