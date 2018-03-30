@@ -76,7 +76,7 @@ typedef enum: NSUInteger
 
 @interface BKCInstrument : NSObject
 {
-	BKInstrument instrument;
+	BKInstrument * instrument;
 	NSMutableArray * sequences;
 }
 

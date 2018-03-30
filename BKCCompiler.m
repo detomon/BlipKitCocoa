@@ -22,6 +22,7 @@
  */
 
 #import "BKCCompiler.h"
+#import "BKTKContext.h"
 
 @implementation BKCCompiler
 

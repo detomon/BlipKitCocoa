@@ -26,6 +26,8 @@
 
 @interface BKCInstrument ()
 
+- (void)initSequence;
+
 - (void)updateSequence:(BKCInstrumentSequence *)sequence;
 
 @end
@@ -158,24 +160,16 @@
 - (instancetype)init
 {
 	BKInt res;
-	BKCInstrumentSequence * sequence;
-	Class sequenceClass;
 
 	if ((self = [super init])) {
-		res = BKInstrumentInit (& instrument);
+		res = BKInstrumentAlloc (& instrument);
 
 		if (res < 0) {
 			NSLog (@"*** Couldn't initialize BKInstrument: %d", res);
 			return nil;
 		}
 
-		sequences = [[NSMutableArray alloc] initWithCapacity:BK_MAX_SEQUENCES];
-		sequenceClass = [[self class] sequenceClass];
-
-		for (NSInteger i = 0; i < BK_MAX_SEQUENCES; i ++) {
-			sequence = [[sequenceClass alloc] initWithType:(BKEnum)i instrument:self];
-			[sequences addObject:sequence];
-		}
+		[self initSequence];
 	}
 
 	return self;
@@ -183,24 +177,49 @@
 
 - (instancetype)initWithEnvelopeADSR:(NSInteger)attack decay:(NSInteger)decay sustain:(NSInteger)sustain release:(NSInteger)release
 {
+	BKInt res;
+
 	if (self = [self init]) {
-		if ([self setEnvelopeADSR:attack decay:decay sustain:sustain release:release] == NO) {
-			NSLog (@"*** Failed to initialize instrument with ADSR envelope");
+		BKObject object;
+		res = BKInstrumentAlloc (& instrument);
+
+		if (res < 0) {
+			NSLog (@"*** Couldn't initialize BKInstrument: %d", res);
 			return nil;
 		}
+
+		memcpy (&object, &instrument->object, sizeof(object));
+		res = BKInstrumentInitCopy (instrument, theInstrument);
+		memcpy (&instrument->object, &object, sizeof(object));
+
+		[self initSequence];
 	}
 
 	return self;
 }
 
+- (void)initSequence
+{
+	BKCInstrumentSequence * sequence;
+	Class sequenceClass;
+
+	sequences = [[NSMutableArray alloc] initWithCapacity:BK_MAX_SEQUENCES];
+	sequenceClass = [[self class] sequenceClass];
+
+	for (NSInteger i = 0; i < BK_MAX_SEQUENCES; i ++) {
+		sequence = [[sequenceClass alloc] initWithType:(BKEnum)i instrument:self];
+		[sequences addObject:sequence];
+	}
+}
+
 - (void)dealloc
 {
-	BKDispose (& instrument);
+	BKDispose (instrument);
 }
 
 - (BKInstrument *)instrument
 {
-	return & instrument;
+	return instrument;
 }
 
 - (BKCInstrumentSequence *)sequenceWithType:(BKEnum)type
