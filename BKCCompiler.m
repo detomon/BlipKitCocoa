@@ -23,6 +23,7 @@
 
 #import "BKCCompiler.h"
 #import "BKTKContext.h"
+#import "BKCInstrument.h"
 
 @implementation BKCCompiler
 
@@ -159,6 +160,24 @@ static BKInt putToken (BKTKToken const * token, BKCCompiler * self)
 	BKHashTableLookup(&compiler.samples, name.UTF8String, (void**) &sample);
 
 	return sample ? &sample->data : NULL;
+}
+
+- (NSDictionary *)namedInstruments
+{
+	BKHashTableIterator itor;
+	char const * key;
+	BKTKInstrument * instr;
+	NSMutableDictionary * instruments = [[NSMutableDictionary alloc] initWithCapacity:BKHashTableSize (&compiler.instruments)];
+
+	BKHashTableIteratorInit (&itor, &compiler.instruments);
+
+	while (BKHashTableIteratorNext (&itor, &key, (void **) &instr)) {
+		BKCInstrument * instrument = [[BKCInstrument alloc] initWithInstrument: &instr -> instr];
+
+		[instruments setValue:instrument forKey:[NSString stringWithUTF8String:key]];
+	}
+
+	return instruments;
 }
 
 - (void)reset

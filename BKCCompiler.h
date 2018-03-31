@@ -50,6 +50,11 @@
 @property (readonly) BKTKCompiler * compiler;
 
 /**
+ * Get named instruments
+ */
+@property (readonly, nonatomic) NSDictionary * namedInstruments;
+
+/**
  * Compile string
  */
 - (BOOL)compileString:(NSString *)string error:(NSError **)error;
