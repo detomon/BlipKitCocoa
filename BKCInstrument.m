@@ -175,7 +175,7 @@
 	return self;
 }
 
-- (instancetype)initWithInstrument:(BKInstrument *)theInstrument
+- (instancetype)initWithInstrument:(BKInstrument const *)theInstrument
 {
 	BKInt res;
 

@@ -30,7 +30,7 @@
 
 #define BKCMaxVolume 32767
 
-#define BKCFInt20Unit  1048576
+#define BKCFInt20Unit  BK_FINT20_UNIT
 #define BKCFInt20Shift BK_FINT20_SHIFT
 
 #define BKCNoRepeat   BK_NO_REPEAT
