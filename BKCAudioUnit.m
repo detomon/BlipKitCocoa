@@ -253,7 +253,7 @@ static OSStatus renderCallback (BKCAudioUnit * self, AudioUnitRenderActionFlags 
 	NSError * error = nil;
 	AVAudioSession * audioSession = [AVAudioSession sharedInstance];
 
-	if ([audioSession setCategory:AVAudioSessionCategoryPlayback error:& error] == NO) {
+	if ([audioSession setCategory:AVAudioSessionCategoryPlayAndRecord error:& error] == NO) {
 		NSLog(@"Error setting audio category: %@", error);
 		return NO;
 	}
